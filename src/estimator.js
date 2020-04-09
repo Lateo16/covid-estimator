@@ -9,19 +9,17 @@ function currentlyInfectedForSeverImpact(_data) {
 
 function infectionByRequestedTime(_currentlyInfected, _data) {
   let factor = 1;
-  const days
+  // const days
   // converting all period types to days
   // and finding the factor
   if (_data.periodType === 'days') {
     factor = Math.round(_data.timeToElapse / 3); 
   }
   else if (_data.periodType === 'weeks') {
-    days = Math.round(_data.timeToElapse * 7);
-    factor = Math.round(days / 3);
+    factor = Math.round(_data.timeToElapse * 7 / 3);
   }
   else if (_data.periodType === 'months') {
-    days = Math.round(_data.timeToElapse * 4 * 7);
-    factor = Math.round(days / 3);
+    factor = Math.round(_data.timeToElapse * 4 * 7 / 3);
   }
   return factor * _currentlyInfected * 2;
 }
