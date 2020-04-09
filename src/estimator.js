@@ -9,7 +9,7 @@ function currentlyInfectedForSeverImpact(_data) {
 
 function infectionByRequestedTime(_currentlyInfected, _data) {
   let factor = 1;
-  const days;
+  const days
   // converting all period types to days
   // and finding the factor
   if (_data.periodType === 'days') {
